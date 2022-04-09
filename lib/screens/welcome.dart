@@ -1,10 +1,20 @@
 import 'package:balisia/consts.dart';
 import 'package:balisia/screens/home.dart';
 import 'package:balisia/utils/slide.dart';
+import 'package:balisia/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatelessWidget {
   const GetStarted({Key? key}) : super(key: key);
+
+  void goHome(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      slidingRoute(
+        const Home(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,40 +59,9 @@ class GetStarted extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: SizedBox(
-        height: 80,
-        width: 80,
-        child: TextButton(
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              slidingRoute(
-                const Home(),
-              ),
-            );
-          },
-          child: const Icon(
-            Icons.chevron_right,
-          ),
-          style: ButtonStyle(
-            shape: MaterialStateProperty.resolveWith(
-              (states) => const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(50),
-                ),
-              ),
-            ),
-            backgroundColor: MaterialStateProperty.resolveWith(
-              (states) => Balisia.black,
-            ),
-            foregroundColor: MaterialStateProperty.resolveWith(
-              (states) => Balisia.white,
-            ),
-            overlayColor: MaterialStateProperty.resolveWith(
-              (states) => Balisia.white.withAlpha(40),
-            ),
-          ),
-        ),
+      floatingActionButton: RoundedButton(
+        onPressed: () => goHome(context),
+        child: const Icon(Icons.chevron_right),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
