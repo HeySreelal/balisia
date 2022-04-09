@@ -1,3 +1,4 @@
+import 'package:balisia/consts.dart';
 import 'package:balisia/screens/home.dart';
 import 'package:balisia/utils/slide.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class GetStarted extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 25),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xFFD0F6FF),
+                      color: Balisia.lightBlue,
                     ),
                   ),
                 ),
@@ -72,13 +73,13 @@ class GetStarted extends StatelessWidget {
               ),
             ),
             backgroundColor: MaterialStateProperty.resolveWith(
-              (states) => const Color(0xFF191A1E),
+              (states) => Balisia.black,
             ),
             foregroundColor: MaterialStateProperty.resolveWith(
-              (states) => Colors.white,
+              (states) => Balisia.white,
             ),
             overlayColor: MaterialStateProperty.resolveWith(
-              (states) => Colors.white.withAlpha(40),
+              (states) => Balisia.white.withAlpha(40),
             ),
           ),
         ),

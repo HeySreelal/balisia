@@ -1,3 +1,4 @@
+import 'package:balisia/consts.dart';
 import 'package:balisia/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +15,17 @@ class MyApp extends StatelessWidget {
       title: 'Balisia',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: Balisia.greyish,
         primarySwatch: Colors.blue,
         textTheme: const TextTheme(
           headline4: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          headline5: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
             color: Colors.black,
           ),
         ),
