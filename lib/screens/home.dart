@@ -2,7 +2,7 @@ import 'package:balisia/consts.dart';
 import 'package:balisia/widgets/destination_card.dart';
 import 'package:balisia/widgets/fab.dart';
 import 'package:balisia/widgets/options_chip.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:balisia/widgets/search.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -70,33 +70,7 @@ class _HomeState extends State<Home> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 8,
-                      ),
-                      hintText: "Search topics here...",
-                      hintStyle: const TextStyle(
-                        color: Balisia.hintGrey,
-                      ),
-                      suffixIcon: Container(
-                        child: const Icon(
-                          CupertinoIcons.search,
-                          color: Balisia.white,
-                        ),
-                        padding: const EdgeInsets.all(8),
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Balisia.black,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
+                  child: const BalisiaSearch(),
                 ),
                 const SizedBox(
                   height: 15,
